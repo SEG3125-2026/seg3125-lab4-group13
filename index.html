@@ -15,54 +15,92 @@
 </head>
 <body>
 
-<div class="container-fluid p-5 bg-white text-dark border-bottom">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="branding">
-      <img src="svg_graphics/fixbike.svg" alt="Restoricycle Logo" style="height: 45px;">
-      <img src="svg_graphics/restoricycle.svg" alt="Restoricycle Title" style="height: 45px;">
+  <div class="container-fluid p-5 bg-white text-dark border-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="branding">
+        <img src="svg_graphics/fixbike.svg" alt="Restoricycle Logo" style="height: 45px;">
+        <img src="svg_graphics/restoricycle.svg" alt="Restoricycle Title" style="height: 45px;">
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link link-dark d-flex align-items-center" 
+           href="#" 
+           style="font-family: 'ND-logos';">
+          <img src="svg_graphics/calendar.svg" alt="" style="height: 25px;" class="me-2">
+          SCHEDULE SERVICE
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-dark d-flex align-items-center" 
+           href="#" 
+           style="font-family: 'ND-logos';">
+          <img src="svg_graphics/staff.svg" alt="" style="height: 25px;" class="me-2">
+          OUR TEAM
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link link-dark d-flex align-items-center" 
-         href="#" 
-         style="font-family: 'ND-logos';">
-        <img src="svg_graphics/calendar.svg" alt="" style="height: 25px;" class="me-2">
-        SCHEDULE SERVICE
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link link-dark d-flex align-items-center" 
-         href="#" 
-         style="font-family: 'ND-logos';">
-        <img src="svg_graphics/staff.svg" alt="" style="height: 25px;" class="me-2">
-        OUR TEAM
-        </a>
-      </li>
-    </ul>
   </div>
-</div>
 
-<img class="img-fluid" src="https://cdn.mos.cms.futurecdn.net/WXZQnTcQHyt2igzrwhNUyW.jpg" class="float-start" .w-50>
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
   
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active">
+      <div class="ratio ratio-16x9">
+        <img src="https://s7d2.scene7.com/is/image/TWCNews/Fixing_bikes_?wid=1250&hei=703&$wide-bg$" alt="indoor1" class="object-fit-cover w-100 h-100">
+      </div>
     </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+    <div class="carousel-item">
+      <div class="ratio ratio-16x9">
+        <img src="https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/campfire-repai-center-toby-web.jpg" alt="indoor2" class="object-fit-cover w-100 h-100">
+      </div>
     </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+
+    <div class="carousel-item">
+      <div class="ratio ratio-16x9">
+        <img src="https://www.sefiles.net/merchant/5753/images/site/TrailBicycles_Shop_Service_Repairs_Suspension_Mechanic_s-slimC.jpg?t=1709929070817" alt="indoor3" class="object-fit-cover w-100 h-100">
+      </div>
+    </div>
+
+  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+  
+  <img class="img-fluid" src="https://cdn.mos.cms.futurecdn.net/WXZQnTcQHyt2igzrwhNUyW.jpg" class="float-start" .w-50>
+  
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Column 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>Column 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>Column 3</h3>        
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>
