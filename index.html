@@ -10,39 +10,46 @@
     @font-face {
       font-family: 'ND-logos';
       src: url('fonts/ND LOGOS REGULAR.ttf');
+
+      html {
+        scroll-behavior: smooth;
+      }
     }
   </style>
 </head>
-<body style="padding-top: 85px;">
+<body style="padding-top: 90px;">
 
-  <div class="container-fluid bg-white border-bottom fixed-top shadow-sm" style="min-height: 70px;">
-    <div class="container d-flex justify-content-between align-items-center py-2">
-    
-      <a href="#home" class="d-flex align-items-center text-decoration-none">
-        <img src="svg_graphics/fixbike.svg" alt="Logo" class="img-fluid" style="height: 35px; width: auto;">
+  <div class="container-fluid p-3 bg-white text-dark border-2 border-bottom fixed-top shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center flex-nowrap">
       
-        <img src="svg_graphics/restoricycle.svg" alt="Restoricycle" class="d-none d-md-block ms-2" style="height: 30px; width: auto;">
+      <a href="#home" class="branding text-decoration-none d-flex align-items-center">
+        <img src="svg_graphics/fixbike.svg" alt="Logo" style="height: 45px; width: auto;">
+        <img src="svg_graphics/restoricycle.svg" alt="Title" class="d-none d-lg-inline ms-2" style="height: 45px; width: auto;">
       </a>
 
-      <ul class="nav">
+      <ul class="nav flex-nowrap">
         <li class="nav-item">
-          <a class="nav-link btn btn-light link-dark d-flex align-items-center px-2 px-md-3 rounded-pill"
+          <a class="nav-link btn btn-light link-dark d-flex align-items-center px-3 rounded-pill"
              href="#" 
-             style="font-family: 'ND-logos'; font-size: 0.8rem;"
+             style="font-family: 'ND-logos';"
              data-bs-toggle="tooltip" 
              title="Schedule Service">
-            <img src="svg_graphics/calendar.svg" alt="" style="height: 20px;" class="me-md-2">
-            <span class="d-none d-sm-inline">SCHEDULE SERVICE</span>
+            <img src="svg_graphics/calendar.svg" alt="" style="height: 30px;" class="me-md-2">
+            <span class="d-none d-sm-inline">
+              SCHEDULE SERVICE
+            </span>
           </a>
         </li>
-        <li class="nav-item ms-1">
-          <a class="nav-link btn btn-light link-dark d-flex align-items-center px-2 px-md-3 rounded-pill"
+        <li class="nav-item ms-2">
+          <a class="nav-link btn btn-light link-dark d-flex align-items-center px-3 rounded-pill"
              href="#" 
-             style="font-family: 'ND-logos'; font-size: 0.8rem;"
+             style="font-family: 'ND-logos';"
              data-bs-toggle="tooltip" 
              title="Our Team">
-            <img src="svg_graphics/staff.svg" alt="" style="height: 20px;" class="me-md-2">
-            <span class="d-none d-sm-inline">OUR TEAM</span>
+            <img src="svg_graphics/staff.svg" alt="" style="height: 30px;" class="me-md-2">
+            <span class="d-none d-sm-inline">
+              OUR TEAM
+            </span>
           </a>
         </li>
       </ul>
