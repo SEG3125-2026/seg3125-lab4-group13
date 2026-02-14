@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
@@ -39,9 +38,6 @@
 
     .mini-muted{ color: var(--bs-gray-600); }
 
-    .bike-part{ stroke: var(--bs-gray-500); stroke-width: 3; fill: none; opacity: .55; }
-    .bike-part.active{ stroke: var(--bs-primary); opacity: 1; stroke-width: 5; }
-
     .sticky-cta{
       position: sticky;
       bottom: 0;
@@ -55,7 +51,6 @@
 
 <body>
 
-  <!-- Top bar -->
   <nav class="navbar navbar-expand-sm bg-white border-bottom shadow-sm fixed-top">
     <div class="container d-flex align-items-center">
       <a class="navbar-brand d-flex align-items-center text-decoration-none" href="#top">
@@ -163,7 +158,6 @@
     </div>
   </header>
 
-  <!-- Location + Reviews -->
   <section id="location" class="section-pad">
     <div class="container">
       <div class="row g-4">
@@ -243,7 +237,6 @@
     </div>
   </section>
 
-  <!-- Booking -->
   <section id="service" class="section-pad bg-white border-top border-bottom">
     <div class="container">
 
@@ -262,7 +255,6 @@
         </div>
       </div>
 
-      <!-- Summary -->
       <div class="card shadow-sm mb-4">
         <div class="card-body">
           <div class="d-flex align-items-start justify-content-between gap-3">
@@ -385,33 +377,52 @@
             </div>
           </div>
 
+          <!-- Mapping panel (photos only, same size) -->
           <div class="card shadow-sm mt-3">
             <div class="card-body">
               <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                <div>
-                  <div class="fw-semibold">What this service affects (mapping)</div>
-                  <div class="mini-muted">The highlighted areas show the primary parts we work on.</div>
-                </div>
-                <span class="badge text-bg-light border" id="mapHint"><i class="bi bi-hand-index-thumb me-1"></i>Select a service card</span>
+                <div class="fw-semibold">What this service affects</div>
+                <span class="badge text-bg-light border" id="mapHint">
+                  <i class="bi bi-hand-index-thumb me-1"></i>Select a service card
+                </span>
               </div>
 
-              <div class="mt-3 d-flex justify-content-center">
-                <svg width="360" height="140" viewBox="0 0 360 140" role="img" aria-label="Bike parts map">
-                  <circle id="part-wheels-1" class="bike-part" cx="78" cy="92" r="38"></circle>
-                  <circle id="part-wheels-2" class="bike-part" cx="282" cy="92" r="38"></circle>
+              <div class="row g-2 mt-3">
+                <div class="col-6 col-md-3">
+                  <figure class="m-0">
+                    <div id="mapBoxBrakes" class="ratio ratio-4x3 rounded-3 overflow-hidden border">
+                      <img src="bike_images/brakes.jpg" class="w-100 h-100 object-fit-cover" alt="Brakes photo">
+                    </div>
+                    <figcaption class="small text-center mt-1">Brakes</figcaption>
+                  </figure>
+                </div>
 
-                  <path class="bike-part" d="M78 92 L140 45 L210 92 L140 92 Z"></path>
-                  <path class="bike-part" d="M140 45 L220 45 L282 92"></path>
+                <div class="col-6 col-md-3">
+                  <figure class="m-0">
+                    <div id="mapBoxWheels" class="ratio ratio-4x3 rounded-3 overflow-hidden border">
+                      <img src="bike_images/wheels.jpg" class="w-100 h-100 object-fit-cover" alt="Wheels photo">
+                    </div>
+                    <figcaption class="small text-center mt-1">Wheels</figcaption>
+                  </figure>
+                </div>
 
-                  <path id="part-brakes" class="bike-part" d="M55 72 L70 82 M305 72 L290 82"></path>
+                <div class="col-6 col-md-3">
+                  <figure class="m-0">
+                    <div id="mapBoxDrive" class="ratio ratio-4x3 rounded-3 overflow-hidden border">
+                      <img src="bike_images/drivetrain.jpg" class="w-100 h-100 object-fit-cover" alt="Drivetrain photo">
+                    </div>
+                    <figcaption class="small text-center mt-1">Drivetrain</figcaption>
+                  </figure>
+                </div>
 
-                  <circle id="part-drivetrain" class="bike-part" cx="160" cy="92" r="14"></circle>
-                  <path id="part-chain" class="bike-part" d="M160 92 L242 86"></path>
-
-                  <text x="78" y="134" text-anchor="middle" font-size="12" fill="currentColor">Wheels</text>
-                  <text x="160" y="134" text-anchor="middle" font-size="12" fill="currentColor">Drivetrain</text>
-                  <text x="282" y="134" text-anchor="middle" font-size="12" fill="currentColor">Wheels</text>
-                </svg>
+                <div class="col-6 col-md-3">
+                  <figure class="m-0">
+                    <div id="mapBoxFull" class="ratio ratio-4x3 rounded-3 overflow-hidden border">
+                      <img src="bike_images/full.png" class="w-100 h-100 object-fit-cover" alt="Full service photo">
+                    </div>
+                    <figcaption class="small text-center mt-1">Full</figcaption>
+                  </figure>
+                </div>
               </div>
             </div>
           </div>
@@ -494,7 +505,6 @@
                     <option>Yann Giffaux — Lead Mechanic</option>
                     <option>Conall Mccooeye — Wheel Specialist</option>
                     <option>Hengjing Zhang — Service Advisor</option>
-
                   </select>
                 </div>
 
@@ -671,22 +681,24 @@
     const pContact = document.getElementById("pContact");
 
     const mapHint = document.getElementById("mapHint");
-    const brakes = document.getElementById("part-brakes");
-    const wheels1 = document.getElementById("part-wheels-1");
-    const wheels2 = document.getElementById("part-wheels-2");
-    const drivetrain = document.getElementById("part-drivetrain");
-    const chain = document.getElementById("part-chain");
+    const mapBoxBrakes = document.getElementById("mapBoxBrakes");
+    const mapBoxWheels = document.getElementById("mapBoxWheels");
+    const mapBoxDrive  = document.getElementById("mapBoxDrive");
+    const mapBoxFull   = document.getElementById("mapBoxFull");
 
     function clearMap(){
-      [brakes, wheels1, wheels2, drivetrain, chain].forEach(el => el.classList.remove("active"));
+      [mapBoxBrakes, mapBoxWheels, mapBoxDrive, mapBoxFull].forEach(box => {
+        if(!box) return;
+        box.classList.remove("border-primary", "border-2");
+      });
     }
 
     function setMap(kind){
       clearMap();
-      if(kind === "brakes"){ brakes.classList.add("active"); }
-      if(kind === "wheels"){ wheels1.classList.add("active"); wheels2.classList.add("active"); }
-      if(kind === "drivetrain"){ drivetrain.classList.add("active"); chain.classList.add("active"); }
-      if(kind === "full"){ [brakes, wheels1, wheels2, drivetrain, chain].forEach(el => el.classList.add("active")); }
+      if(kind === "brakes" && mapBoxBrakes) mapBoxBrakes.classList.add("border-primary","border-2");
+      if(kind === "wheels" && mapBoxWheels) mapBoxWheels.classList.add("border-primary","border-2");
+      if(kind === "drivetrain" && mapBoxDrive) mapBoxDrive.classList.add("border-primary","border-2");
+      if(kind === "full" && mapBoxFull) mapBoxFull.classList.add("border-primary","border-2");
     }
 
     function getSelectedService(){
@@ -723,39 +735,31 @@
         return;
       }
 
-      const price = svc.dataset.price;
-      summaryPrice.textContent = "$" + price;
+      summaryPrice.textContent = "$" + svc.dataset.price;
 
-      const parts = [];
-      parts.push(svc.value);
-      if(date && time){ parts.push(date + " @ " + time); }
-
+      const parts = [svc.value];
+      if(date && time) parts.push(date + " @ " + time);
       summaryLine.textContent = parts.join(" • ");
-      mapHint.innerHTML = '<i class="bi bi-lightning-charge me-1"></i>Highlighted parts updated';
+
+      mapHint.innerHTML = '<i class="bi bi-lightning-charge me-1"></i>Mapping updated';
       setMap(svc.dataset.map);
     }
 
     function isReady(){
       const svc = getSelectedService();
-      const date = dateEl.value;
-      const time = timeEl.value;
-      const name = nameEl.value.trim();
-      const email = emailEl.value.trim();
-      const phone = phoneEl.value.trim();
-
-      return !!svc && !!date && !!time && !!name && !!email && !!phone;
+      return !!svc &&
+        !!dateEl.value &&
+        !!timeEl.value &&
+        !!nameEl.value.trim() &&
+        !!emailEl.value.trim() &&
+        !!phoneEl.value.trim();
     }
 
     function updateCTA(){
       const ready = isReady();
       confirmBtn.classList.toggle("d-none", !ready);
       disabledBtn.classList.toggle("d-none", ready);
-
-      if(ready){
-        ctaHint.textContent = "Looks good — confirm when you're ready.";
-      }else{
-        ctaHint.textContent = "Complete Steps 1–3 to enable confirmation.";
-      }
+      ctaHint.textContent = ready ? "Looks good — confirm when you're ready." : "Complete Steps 1–3 to enable confirmation.";
     }
 
     function updateAll(){
